@@ -10,6 +10,7 @@ import { CheckleavesComponent } from './Employee/checkleaves/checkleaves.compone
 import { LeaverequestComponent } from './Manager/leaverequest/leaverequest.component';
 import {ViewrequestComponent} from './Manager/viewrequest/viewrequest.component';
 import { ManagerhomeComponent } from './Manager/managerhome/managerhome.component';
+import { UpdateLeaveComponent } from './Employee/update-leave.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -19,7 +20,8 @@ const routes: Routes = [
     {path: 'check-leaves', component: CheckleavesComponent},
     {path: 'leave-request', component:LeaverequestComponent},
     {path:'view-request', component: ViewrequestComponent},
-    {path:'manager-home', component: ManagerhomeComponent}
+    {path:'manager-home', component: ManagerhomeComponent},
+    {path:'update', component: UpdateLeaveComponent}
         // otherwise redirect to home
     //{ path: '**', redirectTo: '' }
 ];

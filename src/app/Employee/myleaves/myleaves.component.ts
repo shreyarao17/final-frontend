@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 export class MyList {
   sno: number
   appliedOn: string;
@@ -20,11 +21,19 @@ const data: MyList[] = [
   styleUrls: ['./myleaves.component.less']
 })
 export class MyleavesComponent implements OnInit {
+  
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+  
+  updateEmployee(){
+    this.router.navigate(['update']);
+  }
+
+
+
  // displayedColumns: string[] = ['sno', 'appliedOn', 'from', 'to', 'type', 'status'];
   
 }

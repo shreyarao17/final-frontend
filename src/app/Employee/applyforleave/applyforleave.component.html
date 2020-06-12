@@ -5,8 +5,9 @@
         </div>
         <div class="panel-body">
             <div class="form-group">
-               <label for="noofdays" >No of Days</label>
-               <input id="noofDays" name="nod" [ngModel]="noofDays" type="number" class="form-control">
+               <label for="noofDays" >No of Days</label>
+               <input id="noofDays" required name="noofDays"  [ngModel]="noofDays" type="number" class="form-control">
+               <div class="alert alert-danger" *ngIf="!noofDays.valid">Required</div>
             </div>
     
             <div class="form-group">

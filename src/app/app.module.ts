@@ -16,7 +16,8 @@ import { MyleavesComponent } from './Employee/myleaves/myleaves.component';
 import { CheckleavesComponent } from './Employee/checkleaves/checkleaves.component';
 import { LeaverequestComponent } from './Manager/leaverequest/leaverequest.component';;
 import { ViewrequestComponent } from './Manager/viewrequest/viewrequest.component';
-import { ManagerhomeComponent } from './Manager/managerhome/managerhome.component'
+import { ManagerhomeComponent } from './Manager/managerhome/managerhome.component';
+import { UpdateLeaveComponent } from './Employee/update-leave.component'
 @NgModule({
     imports: [
         BrowserModule,
@@ -36,7 +37,8 @@ import { ManagerhomeComponent } from './Manager/managerhome/managerhome.componen
         CheckleavesComponent,
         LeaverequestComponent ,
         ViewrequestComponent ,
-        ManagerhomeComponent    ],
+        ManagerhomeComponent ,
+        UpdateLeaveComponent   ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
