@@ -3,9 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-// used to create fake backend
-import { fakeBackendProvider } from './_helpers';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
@@ -16,8 +13,10 @@ import { MyleavesComponent } from './Employee/myleaves/myleaves.component';
 import { CheckleavesComponent } from './Employee/checkleaves/checkleaves.component';
 import { LeaverequestComponent } from './Manager/leaverequest/leaverequest.component';;
 import { ViewrequestComponent } from './Manager/viewrequest/viewrequest.component';
-import { ManagerhomeComponent } from './Manager/managerhome/managerhome.component';
+import { ManagerhomeComponent } from './Manager/managerhome/managerhome.component'
+;
 import { UpdateLeaveComponent } from './Employee/update-leave.component'
+import { AuthenticationService } from './_services';
 @NgModule({
     imports: [
         BrowserModule,
@@ -40,11 +39,9 @@ import { UpdateLeaveComponent } from './Employee/update-leave.component'
         ManagerhomeComponent ,
         UpdateLeaveComponent   ],
     providers: [
+        AuthenticationService,
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-
-        // provider used to create fake backend
-        fakeBackendProvider
     ],
     bootstrap: [AppComponent]
 })

@@ -21,7 +21,7 @@ const routes: Routes = [
     {path: 'leave-request', component:LeaverequestComponent},
     {path:'view-request', component: ViewrequestComponent},
     {path:'manager-home', component: ManagerhomeComponent},
-    {path:'update', component: UpdateLeaveComponent}
+    {path:'update-leave/:leaveid', component: UpdateLeaveComponent}
         // otherwise redirect to home
     //{ path: '**', redirectTo: '' }
 ];

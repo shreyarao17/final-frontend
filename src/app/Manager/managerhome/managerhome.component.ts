@@ -16,12 +16,8 @@ export class ManagerhomeComponent implements OnInit {
   constructor(private userService: UserService, private authservice: AuthenticationService) { }
 
   ngOnInit() {
-    this.loading = true;
-   
-    this.userService.getAll().pipe(first()).subscribe(users => {
-        this.loading = false;
-        this.users = users;
-    });
+    this.loading = false;
+  
   this.currentuser=JSON.parse(localStorage.getItem('currentUser'));
 
 }

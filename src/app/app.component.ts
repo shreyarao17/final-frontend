@@ -15,10 +15,14 @@ export class AppComponent {
     ) {
         this.authenticationService.currentUser.subscribe(x => {
         this.currentUser = x
-        if(this.currentUser.role=="Employee"){
-            this.flag=true;
-            console.log(this.flag)
+        if(this.currentUser!=null)
+        {
+            if(this.currentUser.role=="employee"){
+                this.flag=true;
+                console.log(this.flag)
+            }
         }
+       
     });
     }
     

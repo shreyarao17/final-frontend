@@ -2,6 +2,7 @@
 <div *ngIf="flag">
     <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
         <div class="navbar-nav">
+            <a class="nav-item"><img src="src/assets/logo.png" alt="logo"></a>
             <a class="nav-item nav-link" routerLink="/">{{currentUser.role}}</a>
             <a class="nav-item nav-link" routerLink="applyforleave" >Apply for Leave</a> 
             <a class="nav-item nav-link" routerLink="my-leaves">My Leaves</a>

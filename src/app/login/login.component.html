@@ -1,52 +1,53 @@
 ﻿<div class="col-md-6 offset-md-3 mt-5">
-   <!--
- <div class="alert alert-info">
-        Username: test<br />
-        Password: test
-    </div>
-   -->
-<span style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-    <div class="card">
-        <h4 class="card-header">Employee Leave Manager</h4>
-        <div class="card-body">
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                        <div *ngIf="f.username.errors.required">Username is required</div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                        <div *ngIf="f.password.errors.required">Password is required</div>
-                    </div>
-                </div>
-        <div class="form-group">
-             <label for="role">Role:</label>
-            <div>
-              <input id="employee" type="radio" value="Employee" name="role" formControlName="role">
-              <label for="emplyoee">Employee</label>
-           </div>
-           <div>
-              <input id="manager" type="radio" value="Manager" name="role" formControlName="role">
-              <label for="manager">Manager</label>
-           </div>
-           <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
-            <div *ngIf="f.role.errors.required">Role is required</div>
-        </div>
+    <!--
+  <div class="alert alert-info">
+         Username: test<br />
+         Password: test
+     </div>
+    -->
+ <span style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+     <div class="card">
+         <h4 class="card-header">Employee Leave Manager</h4>
+         <div class="card-body">
+             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                 <div class="form-group">
+                     <label for="username">Username</label>
+                     <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                     <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                         <div *ngIf="f.username.errors.required">Username is required</div>
+                     </div>
+                 </div>
+                 <div class="form-group">
+                     <label for="password">Password</label>
+                     <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                     <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                         <div *ngIf="f.password.errors.required">Password is required</div>
+                     </div>
+                 </div>
+         <div class="form-group">
+              <label for="role">Role:</label>
+             <div>
+               <input id="employee" type="radio" value="employee" name="role" formControlName="role">
+               <label for="emplyoee">Employee</label>
             </div>
-            <div style="text-align: center;"> 
-                <button [disabled]="loading" class="btn btn-primary" style="width: 450px;" >
-                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                    Login
-                </button>
-                </div>
-                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
-            </form>
-        </div>
-    </div>
-</span>
-    
+            <div>
+               <input id="manager" type="radio" value="manager" name="role" formControlName="role">
+               <label for="manager">Manager</label>
+            </div>
+            <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
+             <div *ngIf="f.role.errors.required">Role is required</div>
+         </div>
+             </div>
+             <div style="text-align: center;"> 
+                 <button [disabled]="loading" class="btn btn-primary" style="width: 450px;" >
+                     <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                     Login
+                 </button>
+                 </div>
+                 <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+                 <div *ngIf="flag" class="alert alert-danger mt-3 mb-0">Username, Password and Role do not Match, Please try Again!</div>
+             </form>
+         </div>
+     </div>
+ </span>
+     

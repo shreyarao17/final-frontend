@@ -1,11 +1,10 @@
 ﻿export class User {
-    id: number;
+    empid: string;
     username: string;
     password: string;
-    firstName: string;
-    lastName: string;
+    name: string;
     role: string;
-    manager: string;
-    department: string;
+    managerid: string;
+    dept: string;
     token?: string;
 }

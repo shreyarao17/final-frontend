@@ -70,8 +70,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-9-jwt-authentication-example:build"
+            "browserTarget": "angular-9-jwt-authentication-example:build",
+            "proxyConfig": "proxy.conf.json"
+          
           },
+         
           "configurations": {
             "production": {
               "browserTarget": "angular-9-jwt-authentication-example:build:production"

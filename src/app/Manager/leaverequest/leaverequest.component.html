@@ -13,21 +13,26 @@
       <thead>
         <tr>
           <th>Employee ID</th>
-          <th>Name</th>
-          <th>Dept</th>
+          <th>From Date</th>
+          <th>To Date</th>
+          <th>Type</th>
+          <th>Status</th>
           <th>Manage</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>{{item.empId}}</td>
-          <td>{{item.name}}</td>
-          <td>{{item.dept}}</td>
-          <td>
-              <a class="btn btn-primary btn-sm" routerLink="/view-request">View</a>
-          </td>
-        </tr>
-      </tbody>
+        <tr *ngFor="let item of empLeaves " >
+        <td>{{item.empid}}</td>
+        <td>{{item.fromdate}}</td>
+        <td>{{item.todate}}</td>
+        <td>{{item.type}}</td>
+        <td>{{item.status}}</td> 
+        <td *ngIf="item.status === 'pending'">
+          <button class="btn btn-danger btn-sm" (click)=acceptLeave(item.leaveid) >accept</button>
+          <button class="btn btn-danger btn-sm" (click)=rejectLeave(item.leaveid) >reject</button>
+        </td>        
+      </tr>
+    </tbody>
     </table>
   </div>
    

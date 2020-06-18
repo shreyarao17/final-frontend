@@ -1,31 +1,27 @@
 <h3>Leave Application</h3>
 <div [hidden]="submitted" style="width: 800px;">
-  <form [formGroup]="updateleaveForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="noofDays" >No of Days</label>
-        <input id="noofDays" name="noofDays" [ngModel]="noofDays" type="number" class="form-control" required>
-        <div class="alert alert-danger" *ngIf="noofdays && !noofDays.valid">No of Days Required</div>
-     </div>
+  <form [formGroup]="updateleaveForm" (ngSubmit)="onSubmit(updateleaveForm.value)">
+  
 
      <div class="form-group">
          <label for="startDate" >Start Date</label>
-         <input id="startDate" name="startDate" required [ngModel]="startDate" type="date" class="form-control">
+         <input id="startDate" formControlName="startDate" required [ngModel]="startDate" type="date" class="form-control" >
          <div class="alert alert-danger" *ngIf="startDate && !startDate.valid">start Date Required</div>
       </div>
 
       <div class="form-group">
          <label for="endDate" >End Date</label>
-         <input id="endDate" name="endDate" required [ngModel]="endDate" type="date" class="form-control">
+         <input id="endDate" formControlName="endDate" required [ngModel]="endDate" type="date" class="form-control">
          <div class="alert alert-danger" *ngIf="endDate && !endDate.valid">End Date Required</div>
       </div>
 
       <div class="form-group">
-         <label for="leavetype" >Leave Type</label>
-         <select id="leavetype" name="leavetype" required [ngModel]="leavetype"  class="form-control">
-             <option value="1">Earned Leave</option>
-             <option value="2">Casual Leave</option>
-             <option value="3">Sick Leave</option>
-             <option value="4">ML/PL</option>
+         <label for="leavetype">Leave Type</label>
+         <select id="leavetype" formControlName="leavetype" required [ngModel]="leavetype"  class="form-control">
+             <option value="Earned Leave">Earned Leave</option>
+             <option value="Casual Lave">Casual Leave</option>
+             <option value="Sick Leave">Sick Leave</option>
+             <option value="ML/PL">ML/PL</option>
             <!--<option value="5">On Duty Leave</option>--> 
 
          </select>
@@ -34,7 +30,7 @@
 
       <div class="form-group">
          <label for="reason" >Reason</label>
-         <textarea rows="8" id="reason" required name="reason" [ngModel]="reason" type="text" class="form-control"></textarea>
+         <textarea rows="8" id="reason"  formControlName="reason" required [ngModel]="reason" type="text" class="form-control"></textarea>
          <div class="alert alert-danger" *ngIf="reason && !reason.valid">Reason Required</div>
       </div>
 

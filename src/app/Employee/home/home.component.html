@@ -3,16 +3,16 @@
     <div class="card-body">
         <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
         <div class="container">
-            <h5>Welcome {{currentuser.firstName}}</h5>
+            <h5>Welcome {{currentuser.name}}</h5>
             <dl class="list">
                 <dt>EMP ID</dt>
-              <dd>{{ currentuser.id }}</dd>
+              <dd>{{ currentuser.empid }}</dd>
               <dt>Name</dt>
-              <dd>{{ currentuser.firstName }} {{ currentuser.lastName }}</dd>
+              <dd>{{ currentuser.name }} </dd>
               <dt>Department</dt>
-              <dd>{{ currentuser.department }}</dd>
+              <dd>{{ currentuser.dept }}</dd>
               <dt>Manager</dt>
-              <dd>{{ currentuser.manager }}</dd>
+              <dd>{{ currentuser.managerid }}</dd>
             </dl>
           </div>
    <div> </div>
